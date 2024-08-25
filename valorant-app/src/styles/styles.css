@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+    background-color: #0F1923;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.header {
+    background-color: #FF4655;
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1200px;
+    min-width: 300px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px; /* Altura fixa para evitar encolhimento */
+    box-sizing: border-box;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.2em; /* Tamanho fixo do título */
+    white-space: nowrap;
+}
+
+/* Grid dos personagens */
+#personagens {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas por padrão (desktop) */
+    gap: 25px; /* Espaçamento entre os cards */
+    width: 100%;
+    max-width: 1200px;
+    min-width: 300px;
+    padding: 0 20px; /* Espaçamento lateral */
+}
+
+/* Ajusta o tamanho dos cards */
+.character {
+    background-color: #1B2733;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 100%; /* Faz com que os cards ocupem toda a coluna */
+    max-width: 280px; /* Largura máxima ajustada do card */
+    margin: auto; /* Centraliza os cards */
+}
+
+.character:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.character img {
+    width: 100%;
+    height: 200px; /* Altura da imagem ajustada */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #FF4655;
+}
+
+.character h2 {
+    font-size: 1.6em; /* Tamanho da fonte ajustado */
+    margin-bottom: 10px;
+    color: #FF4655;
+}
+
+.character p {
+    font-size: 1.1em; /* Tamanho da fonte ajustado */
+    color: #A9A9A9;
+}
+
+/* Estilo da lupa flutuante */
+.floating-search {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #2d2c2c;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.floating-search:hover {
+    transform: scale(1.1);
+}
+
+.floating-search .search-input {
+    display: none;
+}
+
+.floating-search.active .search-input {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 10px);
+    transform: translateY(-50%);
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+    background-color: #1B2733;
+    color: #FFFFFF;
+    outline: none;
+    width: 150px;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 1200px) {
+    .header {
+        font-size: 1.9em; /* Ajusta o tamanho da fonte */
+        height: 70px; /* Ajusta a altura do header */
+    }
+
+    #personagens {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas menores que 1200px */
+        padding: 0 25px; /* Espaçamento lateral ajustado */
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        font-size: 1.7em;
+        height: 60px; /* Ajusta a altura do header */
+    }
+
+    #personagens {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores que 900px */
+        padding: 0 20px; /* Espaçamento lateral ajustado */
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        font-size: 1.5em;
+        height: auto; /* Permite que a altura do header se ajuste automaticamente */
+        padding: 10px 15px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px; /* Ajusta o espaçamento inferior */
+    }
+
+    .floating-search {
+        top: 10px;
+        right: 10px;
+    }
+
+    .floating-search .search-input {
+        width: 120px; /* Ajusta a largura da barra de busca */
+    }
+
+    #personagens {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
+        padding: 0 10px; /* Espaçamento lateral ajustado */
+    }
+
+    .character {
+        max-width: 180px; /* Largura máxima dos cards ajustada */
+    }
+}
+
+@media (max-width: 360px) {
+    .header {
+        font-size: 1.3em;
+        height: auto; /* Permite que a altura do header se ajuste automaticamente */
+        padding: 5px 10px;
+        margin-bottom: 10px; /* Ajusta o espaçamento inferior */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header h1 {
+        font-size: 1.3em;
+    }
+
+    #personagens {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajusta o número de colunas de acordo com a largura disponível */
+        padding: 0 10px; /* Espaçamento lateral ajustado */
+    }
+
+    .character {
+        max-width: 150px; /* Largura máxima dos cards ajustada */
+        margin: 10px 0; /* Margem vertical ajustada para evitar que os cards fiquem colados */
+    }
+
+    .character img {
+        height: 90px; /* Altura da imagem ajustada */
+    }
+
+    .character h2 {
+        font-size: 1em; /* Tamanho da fonte ajustado */
+    }
+
+    .character p {
+        font-size: 0.8em; /* Tamanho da fonte ajustado */
+    }
+}
