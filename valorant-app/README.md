@@ -35,4 +35,6 @@ Aplicação frontend em React com Vite que exibe cards de agentes do jogo Valora
 
 ![image](https://github.com/user-attachments/assets/5ca98564-f75d-47a4-84a6-9b1f21a92419)
 
+![image](https://github.com/user-attachments/assets/385e690d-1e8d-498a-af48-578290102efb)
+
 
