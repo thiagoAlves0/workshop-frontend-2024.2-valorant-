@@ -29,7 +29,7 @@ Aplicação frontend em React com Vite que exibe cards de agentes do jogo Valora
 
 ## Problemas
 
-- **Deploy no Vercel:** O deploy não foi realizado a tempo. Verifique a configuração e os logs de build.
+- **Deploy no Vercel:** O deploy não foi realizado a tempo. 
 
 ## Capturas 
 
