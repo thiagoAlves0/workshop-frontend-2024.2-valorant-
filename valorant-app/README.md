@@ -31,10 +31,8 @@ Aplicação frontend em React com Vite que exibe cards de agentes do jogo Valora
 
 - **Deploy no Vercel:** O deploy não foi realizado a tempo. Verifique a configuração e os logs de build.
 
-## Contribuição
+## Capturas 
 
-Fork e pull requests são bem-vindos!
+![image](https://github.com/user-attachments/assets/5ca98564-f75d-47a4-84a6-9b1f21a92419)
 
-## Licença
 
-Licenciado sob a Licença MIT.
